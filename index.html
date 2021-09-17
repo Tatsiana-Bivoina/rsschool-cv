@@ -4,29 +4,48 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/default.min.css">
+    <link rel="shortcut icon" type="image/x-icon"
+    href="./images/fav.ico" />
     <link rel="stylesheet" href="./style.css" />
     <title>CV</title>
   </head>
   <body>
     <header class="header">
       <div class="wrapper">
-        <h1>CV</h1>
+        <nav id="navigation" class="nav">
+          <ul>
+            <li><a href="#profile">PROFILE</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+            <li><a href="#education">EDUCATION</a></li>
+            <li><a href="#skills">SKILLS</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#code-example">CODE EXAMPLE</a></li>
+            <li><a href="#language">LANGUAGE</a></li>
+          </ul>
+        </nav>
+        <div id="burger" class="burger-menu">
+          <span></span>
+        </div>
       </div>
     </header>
-    <main>
+    <main class="main">
+      <div class="wrapper">
+        <h1>CV</h1>
+      </div>
       <section class="cv-container">
         <div class="cv-profile">
           <div class="avatar-block">
             <img src="./images/avatar.jpg" alt="avatar"/>
           </div>
           <p class="name">Tatsiana Bivoina</p>
-          <div class="profile-block">
+          <div id="profile" class="profile-block">
             <div class="block-title">
               <h2 class="title">profile</h2>
             </div>
             <p>Unfortunately, I have no experience in IT but I hope to become a successful front-end developer. I am always trying to find a solution and see it through to the end. I work well in a team, I can solve conflicts and compromise.</p>
           </div>
-          <div class="contact-block">
+          <div id="contact" class="contact-block">
             <div class="block-title">
               <h2 class="title">contact</h2>
             </div>
@@ -39,17 +58,29 @@
               </ul>
             </div>
           </div>
-          <div class="language-block">
+          <div id="projects" class="projects-block">
             <div class="block-title">
-              <h2 class="title">language</h2>
+              <h2 class="title">projects</h2>
             </div>
-            <div>
-              <p>Level of English - B1 but I have no practice for a long time.</p>
-            </div>
+            <p>You can see my project:</p>
+            <ul class="projects-list">
+              <li>
+                <a class="project-link" href="https://tatsiana-bivoina.github.io/photo-filter/" target="_blank">
+                  <mark>Photo filter</mark>
+                  <img src="./images/photo-filter.png" alt="photo-filter">
+                </a>
+              </li>
+              <li>
+                <a class="project-link" href="https://tatsiana-bivoina.github.io/Js-Clock/" target="_blank">
+                  <mark>Js Clock</mark>
+                  <img src="./images/js-clock.png" alt="js-clock">
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
         <div class="cv-experience">
-          <div class="education-block">
+          <div id="education" class="education-block">
             <div class="block-title">
               <h2 class="title">education</h2>
             </div>
@@ -60,35 +91,59 @@
               <p>Courses in IT Academy "English for IT. Pre-Intermediate"</p>
               <p class="date">2020-2021</p>
               <p>Courses in IT Academy "Website development using HTML, CSS, JS"</p>
+              <img src="./images/ITAcademy.png" alt="">
+              <p class="date">2021</p>
+              <p>Courses in RSSchool "JS/FE PRE-SCHOOL(JavaScript)"</p>
+              <img src="./images/RSSchool.png" alt="">
             </div>
           </div>
-          <div class="skills-block">
+          <div id="skills" class="skills-block">
             <div class="block-title">
               <h2 class="title">skills</h2>
             </div>
             <div>
-              <ul class="skills-list">
-                <li>JS</li>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>SASS</li>
-                <li>BEM</li>
-                <li>GitHub</li>
-                <li>Bootstrap</li>
-                <li>Gulp</li>
-                <li>Photoshop</li>
-              </ul>
+              <details>
+                <summary>My skills</summary>
+                <ul class="skills-list">
+                  <li>JS</li>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>SASS</li>
+                  <li>BEM</li>
+                  <li>Git</li>
+                  <li>Bootstrap</li>
+                  <li>Gulp</li>
+                  <li>Photoshop</li>
+                  <li>Figma</li>
+                </ul>
+              </details>
+              
             </div>
           </div>
-          <div class="projects-block">
+          <div id="code-example" class="code-example-block">
             <div class="block-title">
-              <h2 class="title">projects</h2>
+              <h2 class="title">code example</h2>
             </div>
-            <p>You can see my project:
-              <mark>
-                <a class="project-link" href="https://tatsiana-bivoina.github.io/Clemo/dist/index.html" target="_blank">link to my project</a>
-              </mark>
-            </p>
+            <pre><code class="language-js">
+var Calculator = {
+  average: function() {
+    if(arguments.length == 0) return 0;
+    let average = 0;
+    for(let i = 0; i < arguments.length; i++) {
+      average += arguments[i];
+    }
+    return average / arguments.length;
+  }
+};
+            </code></pre>
+          </div>
+          <div id="language" class="language-block">
+            <div class="block-title">
+              <h2 class="title">language</h2>
+            </div>
+            <div>
+              <p>Level of English - B1 but I have no practice for a long time.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -109,5 +164,9 @@
         <p class="year">2021</p>
       </div>
     </footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script> 
+    <script src="main.js"></script>
   </body>
 </html>
